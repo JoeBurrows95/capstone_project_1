@@ -10,14 +10,14 @@ their investment, or what their monthly repayment will be on a bond.
 import math
 
 # Introductory message to provide the user with the options available to them
-print("""investment - to calculate the amount of interest you'll earn on your 
-investment bond\t   - to calculate the amount you'll have to pay on a home loan
+print("""investment - to calculate the amount of interest you'll earn on your investment
+bond\t   - to calculate the amount you'll have to pay on a home loan
 """)
 
 # Collecting input from the user based on the options provided - they should 
 # enter either 'investment' or 'bond'
 # Their input will be converted to lower case to handle any variations
-decision = (input("\nEnter either 'investment' or 'bond' from the menu above \
+option_selection = (input("\nEnter either 'investment' or 'bond' from the menu above \
 to proceed:\n").lower())
 
 # I've added some unhappy path handling here, for if the user doesn't enter 
@@ -28,8 +28,8 @@ to proceed:\n").lower())
 # After 5 unsuccessful retries, the while loop will break and the user will be 
 # asked to restart the program
 decision_retries = 0
-while decision != "investment" and decision != "bond":
-    decision = (input("Sorry, your entry wasn't recognised. Please enter either \
+while option_selection != "investment" and option_selection != "bond":
+    option_selection = (input("Sorry, your entry wasn't recognised. Please enter either \
 'investment' or 'bond' from the menu above to proceed:\n").lower())
     decision_retries += 1
     if decision_retries == 5:
@@ -40,7 +40,7 @@ while decision != "investment" and decision != "bond":
 # their investment
 # The following block of code collects all the inputs needed from the user 
 # to calculate their interest
-if decision == "investment":
+if option_selection == "investment":
     print("You have selected 'investment'. Please provide the following information:")
     deposit = float((input("How much money are you depositing?\n")).strip("£").replace(",", ""))
     investment_interest_rate = float((input("What is the interest rate?\n")).strip("%"))
@@ -90,7 +90,7 @@ the program to continue.")
 # from the user in order to calculate the monthly repayments for their bond
 # the following block of code collects all the inputs needed from the user to 
 # calculate their monthly repayments
-elif decision == "bond":
+elif option_selection == "bond":
     print("You have selected 'bond'. Please provide the following information:")
     present_value = float(input("What is the present value of the house?\n")
                           .strip("£").replace(",", ""))
