@@ -85,4 +85,4 @@ elif decision == "bond":
 # I believe all scenarios are covered by the code above, but in case I've missed anything, the below else statement will 
 # print an error message
 else:
-    print("Sorry, your entries weren't recognised. You'll need to restart the program to continue.")
+    print("Sorry, your entries weren't recognised. You will need to restart the program to continue.")
