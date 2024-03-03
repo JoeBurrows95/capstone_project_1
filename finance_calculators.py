@@ -67,7 +67,8 @@ either 'simple' or 'compound' to proceed:\n").lower())
     # If the user wants a simple interest calculation, this code will make that
     # calculation and then print the output
     if interest == "simple":
-        simple_interest = deposit * (1 + (investment_interest_rate_calculation * investment_years))
+        simple_interest = deposit * \
+            (1 + (investment_interest_rate_calculation * investment_years))
         print(f"At an interest rate of {investment_interest_rate}%, over a \
 period of {investment_years} years, your investment will be worth £{simple_interest:.2f}")
 
@@ -91,7 +92,8 @@ the program to continue.")
 # calculate their monthly repayments
 elif decision == "bond":
     print("You have selected 'bond'. Please provide the following information:")
-    present_value = float(input("What is the present value of the house?\n").strip("£").replace(",", ""))
+    present_value = float(input("What is the present value of the house?\n")
+                          .strip("£").replace(",", ""))
     bond_interest_rate = float(input("What is the interest rate?\n").strip("%"))
     bond_interest_rate_calculation = (bond_interest_rate / 100) / 12
     bond_repayment_months = int(input("How many months do you plan to take to \
